@@ -1,0 +1,208 @@
+
+/mnt/data/M2_O0_verify.elf:	file format elf32-littleriscv
+
+Disassembly of section .text:
+
+00000000 <_start>:
+       0: 088000ef     	jal	0x88 <main>
+       4: 00a00893     	li	a7, 0xa
+       8: 00000073     	ecall
+
+0000000c <grup>:
+       c: fe010113     	addi	sp, sp, -0x20
+      10: 00112e23     	sw	ra, 0x1c(sp)
+      14: 00812c23     	sw	s0, 0x18(sp)
+      18: 02010413     	addi	s0, sp, 0x20
+      1c: fea42623     	sw	a0, -0x14(s0)
+      20: fec42703     	lw	a4, -0x14(s0)
+      24: 03100793     	li	a5, 0x31
+      28: 00e7c663     	blt	a5, a4, 0x34 <grup+0x28>
+      2c: 00000793     	li	a5, 0x0
+      30: 0440006f     	j	0x74 <grup+0x68>
+      34: fec42703     	lw	a4, -0x14(s0)
+      38: 04000793     	li	a5, 0x40
+      3c: 00e7c663     	blt	a5, a4, 0x48 <grup+0x3c>
+      40: 00100793     	li	a5, 0x1
+      44: 0300006f     	j	0x74 <grup+0x68>
+      48: fec42703     	lw	a4, -0x14(s0)
+      4c: 04a00793     	li	a5, 0x4a
+      50: 00e7c663     	blt	a5, a4, 0x5c <grup+0x50>
+      54: 00200793     	li	a5, 0x2
+      58: 01c0006f     	j	0x74 <grup+0x68>
+      5c: fec42703     	lw	a4, -0x14(s0)
+      60: 05400793     	li	a5, 0x54
+      64: 00e7c663     	blt	a5, a4, 0x70 <grup+0x64>
+      68: 00300793     	li	a5, 0x3
+      6c: 0080006f     	j	0x74 <grup+0x68>
+      70: 00400793     	li	a5, 0x4
+      74: 00078513     	mv	a0, a5
+      78: 01c12083     	lw	ra, 0x1c(sp)
+      7c: 01812403     	lw	s0, 0x18(sp)
+      80: 02010113     	addi	sp, sp, 0x20
+      84: 00008067     	ret
+
+00000088 <main>:
+      88: fd010113     	addi	sp, sp, -0x30
+      8c: 02112623     	sw	ra, 0x2c(sp)
+      90: 02812423     	sw	s0, 0x28(sp)
+      94: 03010413     	addi	s0, sp, 0x30
+      98: 0012c7b7     	lui	a5, 0x12c
+      9c: 4c078793     	addi	a5, a5, 0x4c0
+      a0: fef42623     	sw	a5, -0x14(s0)
+      a4: fe042423     	sw	zero, -0x18(s0)
+      a8: 0012c7b7     	lui	a5, 0x12c
+      ac: 4c078693     	addi	a3, a5, 0x4c0
+      b0: 666667b7     	lui	a5, 0x66666
+      b4: 66778793     	addi	a5, a5, 0x667
+      b8: 02f697b3     	mulh	a5, a3, a5
+      bc: 4027d713     	srai	a4, a5, 0x2
+      c0: 41f6d793     	srai	a5, a3, 0x1f
+      c4: 40f70733     	sub	a4, a4, a5
+      c8: 00070793     	mv	a5, a4
+      cc: 00279793     	slli	a5, a5, 0x2
+      d0: 00e787b3     	add	a5, a5, a4
+      d4: 00179793     	slli	a5, a5, 0x1
+      d8: 40f68733     	sub	a4, a3, a5
+      dc: 03270793     	addi	a5, a4, 0x32
+      e0: fcf42c23     	sw	a5, -0x28(s0)
+      e4: fe042223     	sw	zero, -0x1c(s0)
+      e8: 07c0006f     	j	0x164 <main+0xdc>
+      ec: fec42703     	lw	a4, -0x14(s0)
+      f0: 001967b7     	lui	a5, 0x196
+      f4: 60d78793     	addi	a5, a5, 0x60d
+      f8: 02f70733     	mul	a4, a4, a5
+      fc: 3c6ef7b7     	lui	a5, 0x3c6ef
+     100: 35f78793     	addi	a5, a5, 0x35f
+     104: 00f707b3     	add	a5, a4, a5
+     108: fef42623     	sw	a5, -0x14(s0)
+     10c: fec42783     	lw	a5, -0x14(s0)
+     110: 0107d793     	srli	a5, a5, 0x10
+     114: 446f8737     	lui	a4, 0x446f8
+     118: 65770713     	addi	a4, a4, 0x657
+     11c: 02e7b733     	mulhu	a4, a5, a4
+     120: 40e786b3     	sub	a3, a5, a4
+     124: 0016d693     	srli	a3, a3, 0x1
+     128: 00d70733     	add	a4, a4, a3
+     12c: 00675713     	srli	a4, a4, 0x6
+     130: 06500693     	li	a3, 0x65
+     134: 02d70733     	mul	a4, a4, a3
+     138: 40e78733     	sub	a4, a5, a4
+     13c: 00070693     	mv	a3, a4
+     140: 10000717     	auipc	a4, 0x10000
+     144: ec470713     	addi	a4, a4, -0x13c
+     148: fe442783     	lw	a5, -0x1c(s0)
+     14c: 00279793     	slli	a5, a5, 0x2
+     150: 00f707b3     	add	a5, a4, a5
+     154: 00d7a023     	sw	a3, 0x0(a5)
+     158: fe442783     	lw	a5, -0x1c(s0)
+     15c: 00178793     	addi	a5, a5, 0x1
+     160: fef42223     	sw	a5, -0x1c(s0)
+     164: fe442703     	lw	a4, -0x1c(s0)
+     168: 02700793     	li	a5, 0x27
+     16c: f8e7d0e3     	bge	a5, a4, 0xec <main+0x64>
+     170: fe042023     	sw	zero, -0x20(s0)
+     174: 0c00006f     	j	0x234 <main+0x1ac>
+     178: 10000717     	auipc	a4, 0x10000
+     17c: e8c70713     	addi	a4, a4, -0x174
+     180: fe042783     	lw	a5, -0x20(s0)
+     184: 00279793     	slli	a5, a5, 0x2
+     188: 00f707b3     	add	a5, a4, a5
+     18c: 0007a783     	lw	a5, 0x0(a5)
+     190: fe842703     	lw	a4, -0x18(s0)
+     194: 00f707b3     	add	a5, a4, a5
+     198: fef42423     	sw	a5, -0x18(s0)
+     19c: 10000717     	auipc	a4, 0x10000
+     1a0: e6870713     	addi	a4, a4, -0x198
+     1a4: fe042783     	lw	a5, -0x20(s0)
+     1a8: 00279793     	slli	a5, a5, 0x2
+     1ac: 00f707b3     	add	a5, a4, a5
+     1b0: 0007a783     	lw	a5, 0x0(a5)
+     1b4: 00078513     	mv	a0, a5
+     1b8: e55ff0ef     	jal	0xc <grup>
+     1bc: 00050793     	mv	a5, a0
+     1c0: 10000697     	auipc	a3, 0x10000
+     1c4: ee468693     	addi	a3, a3, -0x11c
+     1c8: 00279713     	slli	a4, a5, 0x2
+     1cc: 00e68733     	add	a4, a3, a4
+     1d0: 00072703     	lw	a4, 0x0(a4)
+     1d4: 00170713     	addi	a4, a4, 0x1
+     1d8: 10000697     	auipc	a3, 0x10000
+     1dc: ecc68693     	addi	a3, a3, -0x134
+     1e0: 00279793     	slli	a5, a5, 0x2
+     1e4: 00f687b3     	add	a5, a3, a5
+     1e8: 00e7a023     	sw	a4, 0x0(a5)
+     1ec: 10000717     	auipc	a4, 0x10000
+     1f0: e1870713     	addi	a4, a4, -0x1e8
+     1f4: fe042783     	lw	a5, -0x20(s0)
+     1f8: 00279793     	slli	a5, a5, 0x2
+     1fc: 00f707b3     	add	a5, a4, a5
+     200: 0007a783     	lw	a5, 0x0(a5)
+     204: fd842703     	lw	a4, -0x28(s0)
+     208: 02e7c063     	blt	a5, a4, 0x228 <main+0x1a0>
+     20c: 10000797     	auipc	a5, 0x10000
+     210: eb478793     	addi	a5, a5, -0x14c
+     214: 0007a783     	lw	a5, 0x0(a5)
+     218: 00178713     	addi	a4, a5, 0x1
+     21c: 10000797     	auipc	a5, 0x10000
+     220: ea478793     	addi	a5, a5, -0x15c
+     224: 00e7a023     	sw	a4, 0x0(a5)
+     228: fe042783     	lw	a5, -0x20(s0)
+     22c: 00178793     	addi	a5, a5, 0x1
+     230: fef42023     	sw	a5, -0x20(s0)
+     234: fe042703     	lw	a4, -0x20(s0)
+     238: 02700793     	li	a5, 0x27
+     23c: f2e7dee3     	bge	a5, a4, 0x178 <main+0xf0>
+     240: fe842783     	lw	a5, -0x18(s0)
+     244: 66666737     	lui	a4, 0x66666
+     248: 66770713     	addi	a4, a4, 0x667
+     24c: 02e79733     	mulh	a4, a5, a4
+     250: 40475713     	srai	a4, a4, 0x4
+     254: 41f7d793     	srai	a5, a5, 0x1f
+     258: 40f70733     	sub	a4, a4, a5
+     25c: 10000797     	auipc	a5, 0x10000
+     260: e5c78793     	addi	a5, a5, -0x1a4
+     264: 00e7a023     	sw	a4, 0x0(a5)
+     268: fc042e23     	sw	zero, -0x24(s0)
+     26c: 0880006f     	j	0x2f4 <main+0x26c>
+     270: 10000717     	auipc	a4, 0x10000
+     274: d9470713     	addi	a4, a4, -0x26c
+     278: fdc42783     	lw	a5, -0x24(s0)
+     27c: 00279793     	slli	a5, a5, 0x2
+     280: 00f707b3     	add	a5, a4, a5
+     284: 0007a703     	lw	a4, 0x0(a5)
+     288: 10000797     	auipc	a5, 0x10000
+     28c: e3078793     	addi	a5, a5, -0x1d0
+     290: 0007a783     	lw	a5, 0x0(a5)
+     294: 04f75a63     	bge	a4, a5, 0x2e8 <main+0x260>
+     298: 10000717     	auipc	a4, 0x10000
+     29c: d6c70713     	addi	a4, a4, -0x294
+     2a0: fdc42783     	lw	a5, -0x24(s0)
+     2a4: 00279793     	slli	a5, a5, 0x2
+     2a8: 00f707b3     	add	a5, a4, a5
+     2ac: 0007a783     	lw	a5, 0x0(a5)
+     2b0: 1007e713     	ori	a4, a5, 0x100
+     2b4: 10000697     	auipc	a3, 0x10000
+     2b8: d5068693     	addi	a3, a3, -0x2b0
+     2bc: fdc42783     	lw	a5, -0x24(s0)
+     2c0: 00279793     	slli	a5, a5, 0x2
+     2c4: 00f687b3     	add	a5, a3, a5
+     2c8: 00e7a023     	sw	a4, 0x0(a5)
+     2cc: 10000797     	auipc	a5, 0x10000
+     2d0: df078793     	addi	a5, a5, -0x210
+     2d4: 0007a783     	lw	a5, 0x0(a5)
+     2d8: 00178713     	addi	a4, a5, 0x1
+     2dc: 10000797     	auipc	a5, 0x10000
+     2e0: de078793     	addi	a5, a5, -0x220
+     2e4: 00e7a023     	sw	a4, 0x0(a5)
+     2e8: fdc42783     	lw	a5, -0x24(s0)
+     2ec: 00178793     	addi	a5, a5, 0x1
+     2f0: fcf42e23     	sw	a5, -0x24(s0)
+     2f4: fdc42703     	lw	a4, -0x24(s0)
+     2f8: 02700793     	li	a5, 0x27
+     2fc: f6e7dae3     	bge	a5, a4, 0x270 <main+0x1e8>
+     300: 00000793     	li	a5, 0x0
+     304: 00078513     	mv	a0, a5
+     308: 02c12083     	lw	ra, 0x2c(sp)
+     30c: 02812403     	lw	s0, 0x28(sp)
+     310: 03010113     	addi	sp, sp, 0x30
+     314: 00008067     	ret
