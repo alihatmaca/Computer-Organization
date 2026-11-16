@@ -1,0 +1,13 @@
+﻿No,Adres,Assembly,Format,Binary alanlar,Machine code,Byte 0 → 3,Neden seçildi
+1,0x00000098,"lui	a5, 0x12c",U,imm[31:12]=00000000000100101100 | rd=01111 | opcode=0110111,0x0012C7B7,B7 C7 12 00,SID üst kısmı
+2,0x0000009C,"addi	a5, a5, 0x4c0",I,imm[11:0]=010011000000 | rs1=01111 | funct3=000 | rd=01111 | opcode=0010011,0x4C078793,93 87 07 4C,SID alt kısmı
+3,0x00000028,"blt	a5, a4, 0x34 <.L2>",B,imm[12]=0 | imm[10:5]=000000 | rs2=01110 | rs1=01111 | funct3=100 | imm[4:1]=0110 | imm[11]=0 | opcode=1100011,0x00E7C663,63 C6 E7 00,Koşullu branch
+4,0x00000020,"lw	a4, -0x14(s0)",I,imm[11:0]=111111101100 | rs1=01000 | funct3=010 | rd=01110 | opcode=0000011,0xFEC42703,03 27 C4 FE,Stack load
+5,0x000001B8,"jal	ra, 0xc <grup>",J,imm[20]=1 | imm[10:1]=1100101010 | imm[11]=1 | imm[19:12]=11111111 | rd=00001 | opcode=1101111,0xE55FF0EF,EF F0 5F E5,grup fonksiyon çağrısı
+6,0x000001CC,"add	a4, a3, a4",R,funct7=0000000 | rs2=01110 | rs1=01101 | funct3=000 | rd=01110 | opcode=0110011,0x00E68733,33 87 E6 00,Dizi adresi hesabı
+7,0x000001D0,"lw	a4, 0x0(a4)",I,imm[11:0]=000000000000 | rs1=01110 | funct3=010 | rd=01110 | opcode=0000011,0x00072703,03 27 07 00,Bucket load
+8,0x000001D4,"addi	a4, a4, 0x1",I,imm[11:0]=000000000001 | rs1=01110 | funct3=000 | rd=01110 | opcode=0010011,0x00170713,13 07 17 00,Artırma
+9,0x000001E0,"slli	a5, a5, 0x2",I,imm[11:0]=000000000010 | rs1=01111 | funct3=001 | rd=01111 | opcode=0010011,0x00279793,93 97 27 00,Index shift
+10,0x000001E8,"sw	a4, 0x0(a5)",S,imm[11:5]=0000000 | rs2=01110 | rs1=01111 | funct3=010 | imm[4:0]=00000 | opcode=0100011,0x00E7A023,23 A0 E7 00,Bucket store
+11,0x00000000,"jal	ra, 0x88 <main>",J,imm[20]=0 | imm[10:1]=0001000100 | imm[11]=0 | imm[19:12]=00000000 | rd=00001 | opcode=1101111,0x088000EF,EF 00 80 08,main fonksiyon çağrısı
+12,0x000002B0,"ori	a4, a5, 0x100",I,imm[11:0]=000100000000 | rs1=01111 | funct3=110 | rd=01110 | opcode=0010011,0x1007E713,13 E7 07 10,OR bit 8
